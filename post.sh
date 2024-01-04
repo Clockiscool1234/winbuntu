@@ -1,3 +1,4 @@
+#!/bin/bash
 time1="$( date +"%r" )"
 printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m POSTINSTALLATION\nInstalling the nessesary programs, please wait...\n"
 apt-get update > /dev/null
