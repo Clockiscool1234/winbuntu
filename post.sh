@@ -3,8 +3,8 @@ time1="$( date +"%r" )"
 printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m POSTINSTALLATION\nInstalling the nessesary programs, please wait...\n"
 apt-get update > /dev/null
 apt-get upgrade -y > /dev/null
-apt-get install xfce4 xfce4-goodies software-properties-common tigervnc-standalone-server -y > /dev/null
-add-apt-get-repository ppa:mozillateam -y 
+apt-get install xfce4 xfce4-goodies software-properties-common tigervnc-standalone-server -y
+add-apt-get-repository ppa:mozillateam -y > /dev/null
 apt-get install firefox-esr -y > /dev/null
 printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Configuring VNC server...\n"
 mkdir -p .vnc
