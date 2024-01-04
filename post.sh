@@ -1,19 +1,19 @@
 #!/bin/bash
 time1="$( date +"%r" )"
-printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m POSTINSTALLATION\nInstalling the nessesary programs, please wait...\n"
+printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m POSTINSTALLATION\nInstalling the nessesary programs, please wait...\n\e[0m"
 apt-get update > /dev/null
 apt-get upgrade -y > /dev/null
-apt-get install xfce4 xfce4-goodies software-properties-common tigervnc-standalone-server wget -y
+apt-get -qq install xfce4 xfce4-goodies software-properties-common tigervnc-standalone-server wget -y
 add-apt-get-repository ppa:mozillateam -y > /dev/null
 apt-get install firefox-esr -y > /dev/null
-printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Configuring VNC server...\n"
+printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Configuring VNC server...\n\e[0m"
 mkdir -p .vnc
 echo "startxfce4" >> .vnc/xstartup
 echo "127.0.0.1 localhost.localdomain  localhost" > /etc/hosts
-printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Success!\n"
+printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Success!\n\e[0m"
 vncserver :0
 vncserver --kill :0
-printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Creating config files, please wait...\n"
+printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Creating config files, please wait...\n\e[0m"
 mkdir ~/.config
 wget https://raw.githubusercontent.com/Clockiscool1234/winbuntu/main/Windows-10.jpg -q
 wget https://github.com/Clockiscool1234/winbuntu/raw/main/conf.tar.gz -q
