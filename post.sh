@@ -4,7 +4,7 @@ printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m
 apt-get update > /dev/null
 apt-get upgrade -y > /dev/null
 apt-get -qq install xfce4 xfce4-goodies software-properties-common tigervnc-standalone-server wget -y
-add-apt-get-repository ppa:mozillateam
+add-apt-get-repository -y ppa:mozillateam
 apt-get install firefox-esr -y > /dev/null
 printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Configuring VNC server...\n\e[0m"
 mkdir -p .vnc
