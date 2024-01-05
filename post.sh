@@ -1,6 +1,6 @@
 #!/bin/bash
 time1="$( date +"%r" )"
-printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m POSTINSTALLATION\nInstalling the nessesary programs, please wait...\n\e[0m"
+printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Installing the nessesary programs, please wait...\n\e[0m"
 apt-get update > /dev/null
 apt-get upgrade -y > /dev/null
 apt-get -qq install xfce4 xfce4-goodies software-properties-common tigervnc-standalone-server wget -y
