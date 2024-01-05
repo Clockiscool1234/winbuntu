@@ -4,11 +4,12 @@ printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m
 apt-get update > /dev/null
 apt-get upgrade -y > /dev/null
 apt-get -qq install xfce4 xfce4-goodies software-properties-common tigervnc-standalone-server wget -y
-add-apt-get-repository ppa:mozillateam -y > /dev/null
+add-apt-get-repository ppa:mozillateam
 apt-get install firefox-esr -y > /dev/null
 printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Configuring VNC server...\n\e[0m"
 mkdir -p .vnc
-echo "startxfce4" >> .vnc/xstartup
+echo "startxfce4" >> ~/.vnc/xstartup
+chmod +x ~/.vnc/xstartup
 echo "127.0.0.1 localhost.localdomain  localhost" > /etc/hosts
 vncserver :0
 vncserver --kill :0
